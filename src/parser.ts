@@ -1,4 +1,4 @@
-import { Section, Symbo, TkCode, Type, numbers, upperAndLowerCaseLetters } from "./definition"
+import { Section, Symbo, TkCode, Type, numbers, nondigit } from "./definition"
 import { tkword_insert } from "./util"
 import fs from 'fs'
 
@@ -48,10 +48,10 @@ const getToken = () => {
                 token = { code: TkCode.TK_DIVIDE }
                 break
             }
-        } else if ([...upperAndLowerCaseLetters, '_'].includes(s[p])) {
+        } else if (nondigit.includes(s[p])) {
             let identifier = s[p]
             p++
-            while([...upperAndLowerCaseLetters, ...numbers, '_'].includes(s[p])){
+            while([...nondigit, ...numbers].includes(s[p])){
                 identifier += s[p]
                 p++
             }

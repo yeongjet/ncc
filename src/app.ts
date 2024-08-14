@@ -1,16 +1,3 @@
-import {
-    CoffSym,
-  Operand,
-  Section,
-  StorageClass,
-  TkCode,
-  TkWord,
-  Type,
-  TypeCode,
-} from "./definition";
-import { coffsym_add, getSectionDataLength, mk_pointer, sec_sym_put, sym_push } from "./util";
-import { sections } from './common'
-import { IMAGE_SYM_CLASS_NULL, IMAGE_SYM_CLASS_STATIC } from "./definition/windows";
 import * as parser from './parser'
 import fs from 'fs'
 import path from 'path'
